@@ -4,14 +4,18 @@ import { LoginService } from "./login.service"
 import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 
 describe('Login Service', () => {
+
     let loginService: LoginService;
     let http: HttpClient;
     let httpController: HttpTestingController;
 
     beforeEach(() => {
+
         TestBed.configureTestingModule({ // same as ng module
             imports: [HttpClientTestingModule],
+
             providers: [LoginService] // we can't mock this because we are testing this 
+
         }); // consists of utilities
 
         loginService = TestBed.inject(LoginService);
@@ -30,7 +34,9 @@ describe('Login Service', () => {
     })
 
     it('login api', () => {
+
         const testData = true;
+
         const inputData = {
             username: 'admin',
             password: 'admin'
@@ -49,7 +55,9 @@ describe('Login Service', () => {
     })
 
     it('call login() failed', () => {
+
         const emsg = "status 500 error";
+        
         const inputData = {
             username: 'admin',
             password: 'admin'

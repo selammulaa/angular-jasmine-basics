@@ -20,7 +20,7 @@ export class LoginComponent {
 
   
   async login() {
-    if(! (!!this.username && !!this.password)){
+    if(!(!!this.username && !!this.password)){
       this.errorMessage = "Please fill all fields"
       return
     }
